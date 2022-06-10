@@ -169,7 +169,7 @@ onValue(dbref,(snapshot)=> {
         '<a href="'+childSnapshot.val().website+'"> '+childSnapshot.val().website+'</a>'  + '</div>' + '<br>' + '<br>' + '</div>'
 
     document.appendChild(profile);
-    console.log(childSnapshot);
+    //console.log(childSnapshot);
 }
     )
     }, { onlyOnce:true }
@@ -282,7 +282,7 @@ function GetWithUpdate() {
 '</div>';
 var did = document.getElementById('place');
 did.insertAdjacentHTML("beforebegin" , divata);
-   console.log(childSnapshot.val());
+   //console.log(childSnapshot.val());
     });
   }, {
     onlyOnce:true
@@ -308,7 +308,7 @@ onChildAdded( dbref, (data) => {
 var did = document.getElementById('place');
 //did.innerHTML = " ";
 //id.insertAdjacentHTML('beforebegin' , divata).remove()
-did.insertAdjacentHTML('beforebegin' , divata);   console.log(data.val());
+did.insertAdjacentHTML('beforebegin' , divata);   //console.log(data.val());
 }); 
 }
 */ /*
@@ -333,7 +333,7 @@ onValue(dbref,(snapshot)=> {
         '<a href="'+childSnapshot.val().website+'"> '+childSnapshot.val().website+'</a>'  + '</div>' + '<br>' + '<br>' + '</div>'
 
     document.appendChild(profile);
-    console.log(childSnapshot);
+    //console.log(childSnapshot);
 }
     )
     }, { onlyOnce:true }
@@ -361,7 +361,7 @@ onValue(dbref,(snapshot)=> {
         '<a href="'+childSnapshot.val().website+'"> '+childSnapshot.val().website+'</a>'  + '</div>' + '<br>' + '<br>' + '</div>'
 
     document.appendChild(profile);
-    console.log(childSnapshot);
+    //console.log(childSnapshot);
 }
     )
     }, { onlyOnce:true }
