@@ -1,0 +1,372 @@
+<html>
+    <head>
+        <title>Zord</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="zordof.css"/>
+        <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <!--<script src="https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.8.2/firebase-database.js"></script>-->
+        <!---<div class="login" id="login">
+          <span class="sign-span"> Login Room</span>
+          <br>
+          <br>
+          <span class="sign-span" >Room name :</span>
+          <br>
+          <br>
+          <input type="text" id="room" required autocomplete="additional-name">
+          <br>
+          <br>
+          <span class="sign-span"> password :</span>
+          <br>
+          <br>
+          <input type="password" id="password" required autocomplete="new-password">
+          <br>
+          <br>
+          <br>
+          <br>
+          <button class="submit" onclick="CheckN()" id="check"> LOGIN </button>
+          </div>-->       
+          <div class="userspage" id="userspage">
+            <div class="buttoncont">
+            <button class="users" id="z2jlv">
+              <img src="z2jlvdevavatar.png" id="z2jlvpic" class="usersavatar">
+              <br>
+              <span class="username-msg">Z2JLV</span>
+            </button>
+            <button class="users" id="mili">
+              <img src="alhur.jpeg" class="usersavatar" id="milipic">
+              <br>
+              <span class="username-msg">N2JLV</span>
+            </button>
+            </div>
+          </div>
+        <div class="nav">
+            <div class="navuser">
+            <button class="menu"><i class="material-symbols-rounded">
+                menu
+            </i></button>
+        <span class="all"><span class="user"><i class="material-symbols-rounded" id="user">alternate_email</i></span><span class="name" id="name">N2JLV</span>
+        </div>
+        <div class="buttons">
+        <button class="call"> <i class="material-symbols-rounded"> wifi_calling_3 </i></button>
+        <button class="call"> <i class="material-symbols-rounded ">video_call</i></button>
+        <button class="call"> <i class="material-symbols-rounded">group</i></button>
+        </div>
+        <br>
+        </div>
+    </head>
+    <hr>
+    <br>
+        <body id="allin">
+           
+
+<div class="cont" id="place">
+</div>
+        </body>
+          
+    
+            <div class="footerZ" id="footerZ">
+           <!--<input type="file" id="fileinputer">
+            <label for="fileinputer">
+            <i class="material-symbols-rounded" id="inputer">add_to_photos</i>
+            </label>-->
+            <input type="text" class="jaypal" id="textpalZ">
+            <input type="submit" id="sendhidden">
+            <label for="sendhidden"><button class="sendZ" id="sendZ"><i class="material-symbols-rounded">send</i></button></label>
+            </div>
+            <div class="footerM" id="footerM">
+              <!--<input type="file" id="fileinputer">
+              <label for="fileinputer">
+              <i class="material-symbols-rounded" id="inputer">add_to_photos</i>
+              </label>-->
+              <input type="text" class="jaypal" id="textpalM">
+              <input type="submit" id="sendhidden">
+              <label for="sendhidden"><button class="sendM" id="sendM"><i class="material-symbols-rounded">send</i></button></label>
+              </div>
+              
+            <script type="module">
+              
+
+              // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-app.js";
+  import {  getDatabase , limitToFirst ,  set , ref , push , child , onValue , get , query , onChildAdded , onChildChanged , onChildRemoved } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-database.js";
+
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyBbeUUfMqp6-WnAX4q8kF2LQ4_KecoiEd4",
+    authDomain: "zord-17d3f.firebaseapp.com",
+    databaseURL: "https://zord-17d3f-default-rtdb.firebaseio.com",
+    projectId: "zord-17d3f",
+    storageBucket: "zord-17d3f.appspot.com",
+    messagingSenderId: "168562661736",
+    appId: "1:168562661736:web:ee396806ac5efc7bc2dedd"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+              const database = getDatabase(app);
+              
+           /*   var room = document.getElementById('room');
+var pass = document.getElementById('password');
+var check = document.getElementById('check');
+*/
+var sender = document.getElementById("username-msg");
+var footerZ = document.getElementById('footerZ');
+var footerM = document.getElementById('footerM');
+var login =  document.getElementById('login');
+var userspage =  document.getElementById('userspage');
+var z2jlv =  document.getElementById('z2jlv');
+var n2jlv =  document.getElementById('mili');
+var chat = document.getElementById('name');
+
+
+z2jlv.addEventListener('click' , () => {
+  footerZ.style.display = "flex";
+  userspage.style.display = "none";
+  chat.textContent = "N2JLV";
+})
+
+n2jlv.addEventListener('click' , () => {
+  footerM.style.display = "flex";
+  userspage.style.display = "none";
+  chat.textContent = "Z2JLV";
+})
+
+
+
+              var t = new Date();
+var day = t.getDay() + 5;
+var month = t.getMonth() + 1;
+var year = t.getFullYear();
+var hour = t.getHours() > 12 ? t.getHours() - 12 : t.getHours();
+var minute = t.getMinutes();
+let date = day + "/" + month + "/" + year;
+let time = hour + ":" + minute;
+let ampm = (hour >= 12) ? "AM" : "PM" ;
+let dateTime = date+' '+time + ' ' + ampm;
+ 
+function ShowProfiles() {
+ let db = getDatabase();
+const dbref = ref(database, "users/" + sender );
+onValue(dbref,(snapshot)=> {
+    var students =[];
+    snapshot.forEach(childSnapshot => {
+    var profile = ' <div class="profile" id="profrile">\n' +
+        '<img class="profile-pic" id="profimage" src="'+childSnapshot.val().src+'">\n' +
+        '<span class="profilename" id="profilename">'+childSnapshot.val().name+'</span> ' + ' <i class="material-icons-rounded" id="sign"> verified </i> ' + function() {
+            if (data.val().verified === true ) {
+            document.getElementById("sign").style.display = "block";
+            }
+        else {
+            document.getElementById("sign").style.display = "none";
+        }
+        }  +
+        '<br>' + '<div class="bio">' + 
+        '<span class="bio" id="bio">'+childSnapshot.val().bio+'</span> '  +
+        '<a href="'+childSnapshot.val().website+'"> '+childSnapshot.val().website+'</a>'  + '</div>' + '<br>' + '<br>' + '</div>'
+
+    document.appendChild(profile);
+    console.log(childSnapshot);
+}
+    )
+    }, { onlyOnce:true }
+    )}
+
+              function duplicateZ() {
+     var textname = document.getElementById('textpalZ').value;
+     var message = document.getElementById('msg');
+     var divata = ' <div class="message" id="container-message">\n' + 
+'  <div class="ez" id="topex">\n' +
+'  <img class="avatar" id="avatar" src="z2jlvdevavatar.png" onclick="ShowProfiles()">\n' +
+' <span class="username-msg" id="username-msg" onclick="ShowProfiles()">Z2JLV</span>\n' +
+' <span class="time" id="time">'+dateTime+'</span>\n' +
+ '</div>\n' +
+ '<br>\n' +
+' <span class= "msg" id="msg">'+textname+'</span>\n' +
+' <img id="display-image">\n' +
+'<br>\n' +
+'</div>';
+var did = document.getElementById('place');
+did.insertAdjacentHTML('beforebegin' , divata);
+const db = getDatabase(); 
+
+  push(ref(db, 'messages/'), {
+    sender : "Z2JLV",
+    message : textname,
+    time : dateTime,
+    image : "z2jlvdevavatar.png",
+  });
+
+ }
+function duplicateM() {
+  var textname = document.getElementById('textpalM').value;
+  var message = document.getElementById('msg');
+  var divata = ' <div class="message" id="container-message">\n' + 
+'  <div class="ez" id="topex">\n' +
+'  <img class="avatar" id="avatar" src="alhur.jpeg" onclick="ShowProfiles()">\n' +
+' <span class="username-msg" id="username-msg" onclick="ShowProfiles()">N2JLV</span>\n' +
+' <span class="time" id="time">'+dateTime+'</span>\n' +
+'</div>\n' +
+'<br>\n' +
+' <span class= "msg" id="msg">'+textname+'</span>\n' +
+'<br>\n' +
+'</div>';
+var did = document.getElementById('place');
+
+did.insertAdjacentHTML('beforebegin' , divata);
+const db = getDatabase();
+  push(ref(db, 'messages/' ), {
+    sender : "N2JLV",
+    message : textname,
+    time : dateTime,
+    image : "alhur.jpeg",
+  });
+document.getElementById('textpalM').textContent = "    "; 
+
+}
+
+
+
+const submitZ = document.getElementById('sendZ');
+     const submitM = document.getElementById('sendM');
+
+
+submitZ.addEventListener("click" , duplicateZ );
+submitM.addEventListener("click" , duplicateM );
+
+ function GetAllData() {
+  const debrf = ref(database);
+  get(child(debrf , "messages/"))
+  .then((snapshot) => {
+    var messages = [];
+    snapshot.forEach(childSnapshot => {
+      var divata = ' <div class="message" id="container-message">\n' + 
+'  <div class="ez" id="topex">\n' +
+'  <img class="avatar" id="avatar" src="'+childSnapshot.val().image+'">\n' +
+' <span class="username-msg" id="username-msg">'+childSnapshot.val().sender+'</span>\n' +
+' <span class="time" id="time">'+childSnapshot.val().time+'</span>\n' +
+'</div>\n' +
+'<br>\n' +
+' <span class= "msg" id="msg">'+childSnapshot.val().message+'</span>\n' +
+'<br>\n' +
+'</div>';
+var did = document.getElementById('place');
+did.insertAdjacentHTML('beforebegin' , divata); 
+ console.log(childSnapshot.val());
+    })
+  })
+}
+
+//window.onload = GetAllData; 
+
+
+function GetWithUpdate() {
+  const dbref = ref(database, "messages/");
+
+  onValue(dbref,(snapshot)=> {
+    var students =[];
+    snapshot.forEach(childSnapshot => {
+
+      var divata = ' <div class="message" id="container-message">\n' + 
+'  <div class="ez" id="topex">\n' +
+'  <img class="avatar" id="avatar" src="'+childSnapshot.val().image+'" onclick="ShowProfiles()">\n' +
+' <span class="username-msg" id="username-msg" onclick="ShowProfiles()">'+childSnapshot.val().sender+'</span>\n' +
+' <span class="time" id="time">'+childSnapshot.val().time+'</span>\n' +
+'</div>\n' +
+'<br>\n' +
+' <span class= "msg" id="msg">'+childSnapshot.val().message+'</span>\n' +
+'<br>\n' +
+'</div>';
+var did = document.getElementById('place');
+did.insertAdjacentHTML("beforebegin" , divata);
+   console.log(childSnapshot.val());
+    });
+  }, {
+    onlyOnce:true
+  });
+}
+
+window.onload = GetWithUpdate; 
+
+/*function bCHILDREN() {
+let db = getDatabase();
+const dbref = ref(database, "messages/" ,  limitToFirst(1) );
+onChildAdded( dbref, (data) => {
+  var divata = ' <div class="message" id="container-message">\n' + 
+'  <div class="ez" id="topex">\n' +
+'  <img class="avatar" id="avatar" src="'+data.val().image+'">\n' +
+' <span class="username-msg" id="username-msg">'+data.val().sender+'</span>\n' +
+' <span class="time" id="time">'+data.val().time+'</span>\n' +
+'</div>\n' +
+'<br>\n' +
+' <span class= "msg" id="msg">'+data.val().message+'</span>\n' +
+'<br>\n' +
+'</div>';
+var did = document.getElementById('place');
+//did.innerHTML = " ";
+//id.insertAdjacentHTML('beforebegin' , divata).remove()
+did.insertAdjacentHTML('beforebegin' , divata);   console.log(data.val());
+}); 
+}
+*/ /*
+function ShowProfiles() {
+ let db = getDatabase();
+const dbref = ref(database, "users/" + sender );
+onValue(dbref,(snapshot)=> {
+    var students =[];
+    snapshot.forEach(childSnapshot => {
+    var profile = ' <div class="profile" id="profrile">\n' +
+        '<img class="profile-pic" id="profimage" src="'+childSnapshot.val().src+'">\n' +
+        '<span class="profilename" id="profilename">'+childSnapshot.val().name+'</span> ' + ' <i class="material-icons-rounded" id="sign"> verified </i> ' + function() {
+            if (data.val().verified === true ) {
+            document.getElementById("sign").style.display = "block";
+            }
+        else {
+            document.getElementById("sign").style.display = "none";
+        }
+        }  +
+        '<br>' + '<div class="bio">' + 
+        '<span class="bio" id="bio">'+childSnapshot.val().bio+'</span> '  +
+        '<a href="'+childSnapshot.val().website+'"> '+childSnapshot.val().website+'</a>'  + '</div>' + '<br>' + '<br>' + '</div>'
+
+    document.appendChild(profile);
+    console.log(childSnapshot);
+}
+    )
+    }, { onlyOnce:true }
+    )}
+
+*/
+ /*   function ShowProfilem() {
+ let db = getDatabase();
+const dbref = ref(database, "users/user2" );
+onValue(dbref,(snapshot)=> {
+    var students =[];
+    snapshot.forEach(childSnapshot => {
+    var profile = ' <div class="profile" id="profrile">\n' +
+        '<img class="profile-pic" id="profimage" src="'+childSnapshot.val().image_src+'">\n' +
+        '<span class="profilename" id="profilename">'+childSnapshot.val().username+'</span> ' + ' <i class="material-icons-rounded" id="sign"> verified </i> ' + function() {
+            if (data.val().verified === true ) {
+            document.getElementById("sign").style.display = "block";
+            }
+        else {
+            document.getElementById("sign").style.display = "none";
+        }
+        }  +
+        '<br>' + '<div class="bio">' + 
+        '<span class="bio" id="bio">'+childSnapshot.val().about_me+'</span> '  +
+        '<a href="'+childSnapshot.val().website+'"> '+childSnapshot.val().website+'</a>'  + '</div>' + '<br>' + '<br>' + '</div>'
+
+    document.appendChild(profile);
+    console.log(childSnapshot);
+}
+    )
+    }, { onlyOnce:true }
+    )}*/
+/**/
+</script>
+   
+</html>

@@ -1,0 +1,298 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Radio+Canada:wght@400&display=swap');
+body {
+    background-color: #36393f;
+}
+
+#fileinputer {
+display: none;
+}
+
+.ez {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.username-msg , .time , .msg{  
+    padding-left: 10px;
+}
+
+.message-hidden {
+    display: inline;
+}
+.footerZ {
+    display: none;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 350px;
+    width: 100%;
+    height: 50px;
+    background-color: #36393f;
+    position: fixed;
+    bottom: 0;
+}
+
+.footerM {
+    display: none;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 350px;
+    width: 100%;
+    height: 50px;
+    background-color: #36393f;
+    position: fixed;
+    bottom: 0;
+}
+ 
+.jaypal {
+    width: 87%;
+    background-color:transparent;
+    color: white;
+    border-radius:150px;
+    margin-left: 10px;
+    border: 2px solid rgb(131, 127, 127);
+    font-family:"Radio Canada" ;
+    font-weight: 200;
+}
+#sendhidden {
+ display: none;
+}
+
+.eror {
+    color: red;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+}
+
+.message-error {
+border: 1px red solid;
+border-radius: 1%;
+padding: 5px;
+}
+
+.sendZ , .sendM {
+    border: 0;
+    background-color: transparent;
+    color: rgb(131, 127, 127);
+    font-weight: 600;
+    cursor: pointer; 
+}
+
+.submit:hover {
+background-color: aquamarine;
+animation-delay: 100000000000s;
+cursor: pointer;
+}
+#submit {
+    margin-top: 20px;
+    margin-left: 80px;
+}
+.form {
+    height: 200px;
+    width: 230px
+;   background-color: aliceblue;
+    align-items: center;
+    margin-left: 25%;
+    position: fixed;
+    padding: 10px;
+}
+#display-image {
+    height: auto;
+    width: auto;
+}
+#edit {
+font-size: small;
+color: rgb(205, 205, 205);   
+padding-left: 4px;
+cursor: pointer;
+}
+.form p {
+    padding: 10px;
+}
+
+.form p:hover {
+    cursor: pointer;
+    color:red
+}
+
+#fat {
+    height: 40px;
+    width: 60px;
+}
+
+.timingcont {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.justlikea {
+    color: purple;
+    text-decoration: underline;
+    font-size: medium;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+.justlikea:hover {
+    cursor: pointer;
+}
+.sign {
+    display: block;
+    position: fixed;
+    background-color:#2f3136;
+    padding-left: 40%;
+    padding-top: 10%;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+}
+
+.login {
+    display: block;
+    position: fixed;
+    background-color:#2f3136;
+    padding-left: 40%;
+    padding-top: 10%;
+    height: 100%;
+    width: 100%;
+    align-items: center; 
+}
+
+.userspage {
+    display: block;
+    position: fixed;
+    background-color:#2f3136;
+    padding-right:100px;
+    padding-top: 5%;
+    height: 100%;
+    width: 100%;
+    align-items: center; 
+}
+
+.buttoncont{
+display: flex;
+justify-content: space-around;
+}
+
+.users {
+height: 600px;
+width: 40%;
+max-width: 480px;
+cursor: pointer;
+background-color: blue;
+}
+
+
+.sign-span {
+    font-weight: 700;
+    font-size: larger;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    margin-bottom: 500px;
+}
+.country {
+    background-color: transparent;
+    margin: 0;
+    border: 1px solid black;
+    height: 70px;
+    border-radius: 25%;
+width: 70px;
+cursor: pointer;
+align-items: center;
+}
+
+.pop {
+    display: none;
+}
+
+.country:hover + .pop {
+    display: block;
+}
+#noty {
+    height: 60px;
+    width: 60px;
+}
+
+#createme {
+    align-items: center;
+    border-radius:150px ;
+    margin-top:40px;
+    margin-left: 15px;
+    padding: 3px;
+}
+#inputer {
+    border: 0;
+    background-color: transparent;
+    color: rgb(131, 127, 127);
+    font-weight: 600;
+    cursor: pointer;
+}
+.menu {
+    border: 0;
+    background-color: transparent;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+.navuser {
+    display:flex ;
+    justify-content: space-between;
+}
+.all {
+align-content: center;
+}
+
+.user , #user {
+    background-color: transparent;
+    color: rgb(131, 127, 127);
+    font-size: 14px;
+    align-self: center;
+}
+
+.time {
+ color: rgb(205, 205, 205);   
+}
+.name , .username-msg , .msg {
+    color: white;
+font-weight: 700;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+ }
+
+.call {
+    color: rgb(131, 127, 127);
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 60%;
+}
+.nav {
+  display:flex ;
+  flex-direction: row;
+  align-content: center;
+}
+
+.message {
+    height: 160px;
+    width: 100%;
+    background-color: transparent;
+}
+
+.usersavatar {
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+}
+
+.avatar {
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+}
