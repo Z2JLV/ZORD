@@ -29,9 +29,9 @@
           <div class="userspage" id="userspage">
             <div class="buttoncont">
             <button class="users" id="z2jlv">
-              <img src="z2jlvdevavatar.png" id="z2jlvpic" class="usersavatar">
+              <img src="tiredme.jpeg" id="z2jlvpic" class="usersavatar">
               <br>
-              <span class="username-msg">Z2JLV</span>
+              <span class="username-msg">Anonymous_user1</span>
             </button>
             <button class="users" id="mili">
               <img src="alhur.jpeg" class="usersavatar" id="milipic">
@@ -132,7 +132,7 @@ z2jlv.addEventListener('click' , () => {
 n2jlv.addEventListener('click' , () => {
   footerM.style.display = "flex";
   userspage.style.display = "none";
-  chat.textContent = "Z2JLV";
+  chat.textContent = "Anonymous_user1";
 })
 
 
@@ -180,8 +180,8 @@ onValue(dbref,(snapshot)=> {
      var message = document.getElementById('msg');
      var divata = ' <div class="message" id="container-message">\n' + 
 '  <div class="ez" id="topex">\n' +
-'  <img class="avatar" id="avatar" src="z2jlvdevavatar.png" onclick="ShowProfiles()">\n' +
-' <span class="username-msg" id="username-msg" onclick="ShowProfiles()">Z2JLV</span>\n' +
+'  <img class="avatar" id="avatar" src="tiredme.jpeg" onclick="ShowProfiles()">\n' +
+' <span class="username-msg" id="username-msg" onclick="ShowProfiles()">Anonymous_user1</span>\n' +
 ' <span class="time" id="time">'+dateTime+'</span>\n' +
  '</div>\n' +
  '<br>\n' +
@@ -194,10 +194,10 @@ did.insertAdjacentHTML('beforebegin' , divata);
 const db = getDatabase(); 
 
   push(ref(db, 'messages/'), {
-    sender : "Z2JLV",
+    sender : "Anonymous_user1",
     message : textname,
     time : dateTime,
-    image : "z2jlvdevavatar.png",
+    image : "tiredme.jpeg",
   });
 
  }
